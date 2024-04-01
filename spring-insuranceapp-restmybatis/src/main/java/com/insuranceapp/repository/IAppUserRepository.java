@@ -8,8 +8,9 @@ import com.insuranceapp.model.AppUser;
 @Mapper
 public interface IAppUserRepository {
 	
-    @Insert("insert into appuser values(#{userId},#{userName},#{password},#{email})")
+    @Insert("insert into appuser values(#{username},#{password})")
 	void addUser(AppUser appUser);
-	@Select("select * from appuser where username=#{userName}")
+    
+	@Select("select * from appuser where username=#{username}")
 	AppUser findByUsername(String username);
 }

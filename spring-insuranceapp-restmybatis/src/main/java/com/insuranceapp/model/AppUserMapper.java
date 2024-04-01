@@ -14,10 +14,10 @@ public class AppUserMapper {
 
 	//convert app user to user details
 	public AppUser convertToAppUser(UserDetails userDetails) {
-		String userName=userDetails.getUsername();
+		String username=userDetails.getUsername();
 		String password=userDetails.getPassword();
 		AppUser appUser=new AppUser();
-		appUser.setUserName(userName);
+		appUser.setUsername(username);
 		appUser.setPassword(password);
 		
 		return appUser;
@@ -25,7 +25,7 @@ public class AppUserMapper {
 	//from db to front end
     //convert user details to app user
 	public UserDetails convertToUserDetails(AppUser appUser) {
-		String userName=appUser.getUserName();
+		String userName=appUser.getUsername();
 		String password=appUser.getPassword();
 		List<GrantedAuthority> authorities=new ArrayList<>();
 		
